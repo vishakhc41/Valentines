@@ -173,7 +173,7 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,#ff80b522,transparent_60%),radial-gradient(circle_at_85%_20%,#f5cba729,transparent_65%)]" />
 
           <div className="relative flex flex-col gap-6 sm:gap-8 lg:gap-10 lg:flex-row lg:items-center">
-            <div className="max-w-xl space-y-4 sm:space-y-5">
+            <div className="max-w-xl w-full space-y-4 sm:space-y-5">
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -189,15 +189,17 @@ export default function Home() {
                 transition={{ delay: 0.05, duration: 0.85, ease: "easeOut" }}
                 className="font-serif text-3xl font-semibold leading-tight text-[#fff0f7] sm:text-4xl md:text-5xl lg:text-6xl"
               >
-                <span
-                  id="sony-name"
-                  onClick={onSonyClick}
-                  className="cursor-pointer bg-gradient-to-r from-[#ff80b5] via-[#f5cba7] to-[#ff80b5] bg-clip-text text-transparent"
-                >
-                  Sony
+                <span className="inline-flex items-baseline flex-wrap gap-1">
+                  <span
+                    id="sony-name"
+                    onClick={onSonyClick}
+                    className="cursor-pointer bg-gradient-to-r from-[#ff80b5] via-[#f5cba7] to-[#ff80b5] bg-clip-text text-transparent"
+                  >
+                    Sony
+                  </span>
+                  <span>, this is our story</span>
+                  <span className="inline-block align-middle text-[#ff80b5] ml-1">❤️</span>
                 </span>
-                , this is our story{" "}
-                <span className="align-middle text-[#ff80b5]">❤️</span>
               </motion.h1>
 
               <motion.p
@@ -220,12 +222,12 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-                className="flex flex-wrap items-center gap-3 pt-1"
+                className="flex flex-wrap items-center gap-3 pt-1 sm:pt-2"
               >
-                <button onClick={scrollToJourney} className="btn-primary">
+                <button onClick={scrollToJourney} className="btn-primary whitespace-nowrap">
                   Our journey
                 </button>
-                <a href="#love-letter" className="btn-ghost">
+                <a href="#love-letter" className="btn-ghost whitespace-nowrap">
                   Read my letter
                 </a>
               </motion.div>
@@ -234,29 +236,78 @@ export default function Home() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.32, duration: 0.8, ease: "easeOut" }}
-                className="mt-3 sm:mt-4 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4 text-[10px] sm:text-[11px] text-[#e5c8d4]"
+                className="mt-3 sm:mt-4 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2.5 sm:gap-4 text-[10px] sm:text-[11px] text-[#e5c8d4]"
               >
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-6 sm:w-8 rounded-full bg-[#ff80b5]" />
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="h-1.5 w-6 sm:w-8 rounded-full bg-[#ff80b5] flex-shrink-0" />
                   <span className="whitespace-nowrap">Started talking · 10 June 2025</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-6 sm:w-8 rounded-full bg-[#f5cba7]" />
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="h-1.5 w-6 sm:w-8 rounded-full bg-[#f5cba7] flex-shrink-0" />
                   <span className="whitespace-nowrap">Got together · 21 October</span>
                 </div>
               </motion.div>
+
+              {/* Hero visual: glowing heart - Mobile only (below lg) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
+                className="relative mt-6 h-64 w-full flex items-center justify-center lg:hidden overflow-visible"
+              >
+                <motion.div
+                  className="relative flex h-[200px] w-[200px] items-center justify-center"
+                  style={{
+                    clipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
+                    WebkitClipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
+                  }}
+                  animate={{
+                    boxShadow: [
+                      "0 0 50px rgba(255,128,181,0.75)",
+                      "0 0 80px rgba(245,203,167,0.8)",
+                      "0 0 50px rgba(255,128,181,0.75)",
+                    ],
+                    scale: [1, 1.03, 1],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {/* Heart path for clip-path - scaled to 300x300 coordinate system */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      clipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
+                      WebkitClipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
+                      background: "radial-gradient(circle at center, #ffeaea 0%, #ffb3d9 30%, #ff80b5 60%, #f03572 85%, #b31245 100%)",
+                    }}
+                  />
+                  {/* Subtle outline/halo */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      clipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
+                      WebkitClipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
+                      background: "transparent",
+                      boxShadow: "inset 0 0 0 1px rgba(255,234,234,0.4), 0 0 20px rgba(255,234,234,0.3), 0 0 40px rgba(255,192,203,0.2)",
+                    }}
+                  />
+                </motion.div>
+              </motion.div>
             </div>
 
-            {/* Hero visual: glowing heart */}
+            {/* Hero visual: glowing heart - Desktop only (lg and above) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, x: 30 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
-              className="relative mt-6 sm:mt-4 h-48 w-full flex-1 sm:h-64 md:h-80 lg:h-96"
+              className="hidden lg:flex relative h-80 xl:h-96 flex-1 overflow-visible"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center overflow-visible">
                 <motion.div
-                  className="relative flex h-[200px] w-[200px] items-center justify-center sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] lg:h-[300px] lg:w-[300px]"
+                  className="relative flex h-[300px] w-[300px] items-center justify-center mx-auto"
                   style={{
                     clipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
                     WebkitClipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
