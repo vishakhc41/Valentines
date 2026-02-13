@@ -13,6 +13,7 @@ import { CelebrationShower } from "./components/CelebrationShower";
 export default function Home() {
   const [musicOn, setMusicOn] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const celebrationAudioRef = useRef<HTMLAudioElement | null>(null);
   const loveScrollRef = useRef<HTMLDivElement | null>(null);
   const [loveScrollActive, setLoveScrollActive] = useState(false);
   const [celebrationActive, setCelebrationActive] = useState(false);
@@ -41,6 +42,15 @@ export default function Home() {
       audioRef.current.pause();
     }
   }, [musicOn]);
+
+  // Preload celebration audio on mount
+  useEffect(() => {
+    if (typeof window === "undefined" || !celebrationAudioRef.current) return;
+    const audio = celebrationAudioRef.current;
+    audio.preload = "auto";
+    // Load the audio
+    audio.load();
+  }, []);
 
   useEffect(() => {
     if (!loveScrollRef.current || typeof window === "undefined") return;
@@ -90,7 +100,43 @@ export default function Home() {
 
   const handleYes = useCallback(() => {
     setCelebrationActive(true);
-  }, []);
+    // Play celebration audio when Yes is clicked
+    if (celebrationAudioRef.current) {
+      const audio = celebrationAudioRef.current;
+      // Reset to beginning to ensure clean playback
+      audio.currentTime = 0;
+      audio.volume = 0.8;
+      
+      // Pause background music temporarily if playing
+      const wasMusicPlaying = musicOn && audioRef.current && !audioRef.current.paused;
+      if (wasMusicPlaying && audioRef.current) {
+        audioRef.current.pause();
+      }
+      
+      // Play the celebration audio
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Audio started playing successfully
+            // Resume background music when celebration audio ends
+            audio.onended = () => {
+              if (wasMusicPlaying && audioRef.current) {
+                audioRef.current.play().catch(() => {});
+              }
+            };
+          })
+          .catch((error) => {
+            // If play fails, try to resume background music
+            if (wasMusicPlaying && audioRef.current) {
+              audioRef.current.play().catch(() => {});
+            }
+            console.error("Error playing celebration audio:", error);
+          });
+      }
+    }
+  }, [musicOn]);
 
   return (
     <>
@@ -102,6 +148,12 @@ export default function Home() {
         loop
         className="hidden"
         src="/music.mp3"
+      />
+      <audio
+        ref={celebrationAudioRef}
+        className="hidden"
+        preload="auto"
+        src="/Untitled video - Made with Clipchamp (1).m4a"
       />
 
       <main className="relative z-10 min-h-screen valentine-gradient">
