@@ -25,10 +25,10 @@ interface Particle {
 
 export function CelebrationShower({ active }: CelebrationShowerProps) {
   const [particles, setParticles] = useState<Particle[]>([]);
-  const intervalRef = useRef<NodeJS.Timeout>();
-  const rafRef = useRef<number>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const rafRef = useRef<number | null>(null);
   const idCounterRef = useRef<number>(0);
-  const fireworkIntervalRef = useRef<NodeJS.Timeout>();
+  const fireworkIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const windowSizeRef = useRef({ width: 1920, height: 1080 });
 
   // Memoize color arrays
