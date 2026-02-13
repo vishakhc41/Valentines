@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Music, Music2 } from "lucide-react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { HeartParticles } from "./components/HeartParticles";
 import { Preloader } from "./components/Preloader";
@@ -106,29 +105,13 @@ export default function Home() {
       />
 
       <main className="relative z-10 min-h-screen valentine-gradient">
-        {/* Top chrome: subtle nav + music toggle */}
+        {/* Top chrome: subtle nav */}
         <div className="pointer-events-none fixed inset-x-0 top-0 z-20 flex justify-center bg-gradient-to-b from-black/80 via-black/50 to-transparent pb-6 pt-4 backdrop-blur-md">
           <div className="pointer-events-auto flex w-full max-w-5xl items-center justify-between px-4 sm:px-6">
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#f7c0d9]">
               <span className="h-1 w-1 rounded-full bg-[#ff80b5] shadow-[0_0_10px_rgba(255,128,181,0.9)]" />
               <span>Our private little universe</span>
             </div>
-            <button
-              onClick={() => setMusicOn((v) => !v)}
-              className="btn-ghost flex items-center gap-2 text-[11px]"
-            >
-              {musicOn ? (
-                <>
-                  <Music2 className="h-3.5 w-3.5" />
-                  <span>Pause our soundtrack</span>
-                </>
-              ) : (
-                <>
-                  <Music className="h-3.5 w-3.5" />
-                  <span>Play something soft</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
 
