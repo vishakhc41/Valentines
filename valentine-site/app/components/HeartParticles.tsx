@@ -15,7 +15,7 @@ const heartPath = 'path("M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5 C2,5.42,4.
 export function HeartParticles() {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | null>(null);
   const lastUpdateRef = useRef<number>(0);
 
   const smoothX = useSpring(cursorX, { stiffness: 45, damping: 20 });
