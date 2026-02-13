@@ -1,0 +1,12 @@
+{
+  "name": "valentines-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix valentine-site",
+    "build": "npm run build --prefix valentine-site",
+    "start": "npm run start --prefix valentine-site",
+    "install": "npm install --prefix valentine-site"
+  }
+}
+
