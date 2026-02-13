@@ -53,7 +53,7 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
         >
           {/* Glowing, pulsing heart with text inside */}
           <motion.div
-            className="relative flex h-[250px] w-[250px] items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[360px] md:w-[360px] lg:h-[400px] lg:w-[400px]"
+            className="relative flex h-[400px] w-[400px] items-center justify-center"
             style={{
               clipPath: 'path("M200,358.32l-24.16-22C90,256,33.32,204.68,33.32,141.68 C33.32,90.32,73.68,50,125,50c29,0,56.84,13.52,75,34.84C218.16,63.52,246,50,275,50 C326.32,50,366.68,90.32,366.68,141.68c0,63-56.68,114.32-142.52,192.32L200,358.32z")',
               WebkitClipPath: 'path("M200,358.32l-24.16-22C90,256,33.32,204.68,33.32,141.68 C33.32,90.32,73.68,50,125,50c29,0,56.84,13.52,75,34.84C218.16,63.52,246,50,275,50 C326.32,50,366.68,90.32,366.68,141.68c0,63-56.68,114.32-142.52,192.32L200,358.32z")',
@@ -97,12 +97,12 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 font-serif text-center font-semibold text-white px-4 py-2 sm:px-6"
+              className="relative z-10 font-serif text-center font-semibold text-white px-6 py-2"
               style={{
-                fontSize: 'clamp(1.25rem, 3.5vw, 2.25rem)',
+                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
                 lineHeight: '1.2',
                 textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)",
-                maxWidth: '85%',
+                maxWidth: '90%',
               }}
             >
               Will you be my valentine?
