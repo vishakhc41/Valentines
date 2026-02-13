@@ -30,7 +30,7 @@ Vishakh`;
 
 export function LoveLetter() {
   const [displayText, setDisplayText] = useState("");
-  const frameRef = useRef<number>();
+  const frameRef = useRef<number | null>(null);
   const lastUpdateRef = useRef<number>(0);
 
   useEffect(() => {
