@@ -1,4 +1,6 @@
 {
-  "rootDirectory": "valentine-site"
+  "buildCommand": "cd valentine-site && npm run build",
+  "installCommand": "cd valentine-site && npm install",
+  "outputDirectory": "valentine-site/.next"
 }
 
