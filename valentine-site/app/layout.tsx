@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +16,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sony, this is our story ❤️",
   description:
-    "A special Valentine’s Day love letter from Vishakh to Sony.",
+    "A special Valentine's Day love letter from Vishakh to Sony.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

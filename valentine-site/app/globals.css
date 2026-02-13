@@ -32,6 +32,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 
 .valentine-gradient {
@@ -55,7 +57,13 @@ body {
 }
 
 .valentine-section {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 80px;
+}
+
+@media (min-width: 640px) {
+  .valentine-section {
+    scroll-margin-top: 96px;
+  }
 }
 
 .btn-primary {

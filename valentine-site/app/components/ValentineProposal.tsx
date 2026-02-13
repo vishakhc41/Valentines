@@ -43,17 +43,17 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
 
   return (
     <>
-      <section className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-32 pt-16 sm:px-6 lg:px-8">
+      <section className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-20 pt-12 sm:px-6 sm:pb-32 sm:pt-16 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="relative flex flex-col items-center gap-8"
+          className="relative flex flex-col items-center gap-6 sm:gap-8"
         >
           {/* Glowing, pulsing heart with text inside */}
           <motion.div
-            className="relative flex h-[400px] w-[400px] items-center justify-center"
+            className="relative flex h-[250px] w-[250px] items-center justify-center sm:h-[320px] sm:w-[320px] md:h-[360px] md:w-[360px] lg:h-[400px] lg:w-[400px]"
             style={{
               clipPath: 'path("M200,358.32l-24.16-22C90,256,33.32,204.68,33.32,141.68 C33.32,90.32,73.68,50,125,50c29,0,56.84,13.52,75,34.84C218.16,63.52,246,50,275,50 C326.32,50,366.68,90.32,366.68,141.68c0,63-56.68,114.32-142.52,192.32L200,358.32z")',
               WebkitClipPath: 'path("M200,358.32l-24.16-22C90,256,33.32,204.68,33.32,141.68 C33.32,90.32,73.68,50,125,50c29,0,56.84,13.52,75,34.84C218.16,63.52,246,50,275,50 C326.32,50,366.68,90.32,366.68,141.68c0,63-56.68,114.32-142.52,192.32L200,358.32z")',
@@ -97,12 +97,12 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 font-serif text-center font-semibold text-white px-6 py-2"
+              className="relative z-10 font-serif text-center font-semibold text-white px-4 py-2 sm:px-6"
               style={{
-                fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
+                fontSize: 'clamp(1.25rem, 3.5vw, 2.25rem)',
                 lineHeight: '1.2',
                 textShadow: "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)",
-                maxWidth: '90%',
+                maxWidth: '85%',
               }}
             >
               Will you be my valentine?
@@ -115,13 +115,13 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative flex gap-4 items-center justify-center"
+            className="relative flex gap-3 sm:gap-4 items-center justify-center flex-wrap"
           >
             <motion.button
               onClick={handleYes}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary px-8 py-3 text-base relative z-10"
+              className="btn-primary px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base relative z-10"
               animate={hasAccepted ? { scale: 1.2 } : {}}
             >
               Yes
@@ -131,7 +131,7 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
                 onClick={handleNo}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-ghost px-8 py-3 text-base relative z-10"
+                className="btn-ghost px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base relative z-10"
                 animate={{
                   x: noButtonPosition.x,
                   y: noButtonPosition.y,
@@ -164,14 +164,14 @@ export function ValentineProposal({ onYes }: ValentineProposalProps) {
               initial={{ y: 50 }}
               animate={{ y: 0 }}
               exit={{ y: 50 }}
-              className="glass-panel relative mx-4 max-w-md rounded-2xl p-8 text-center"
+              className="glass-panel relative mx-4 max-w-md rounded-2xl p-6 sm:p-8 text-center"
               onClick={(e) => e.stopPropagation()}
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="font-serif text-2xl font-semibold text-[#ff80b5] sm:text-3xl"
+                className="font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-[#ff80b5]"
               >
                 endhuvadaa, wrong answer shundapiiiii
               </motion.p>

@@ -158,21 +158,22 @@ export default function Home() {
 
       <main className="relative z-10 min-h-screen valentine-gradient">
         {/* Top chrome: subtle nav */}
-        <div className="pointer-events-none fixed inset-x-0 top-0 z-20 flex justify-center bg-gradient-to-b from-black/80 via-black/50 to-transparent pb-6 pt-4 backdrop-blur-md">
-          <div className="pointer-events-auto flex w-full max-w-5xl items-center justify-between px-4 sm:px-6">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#f7c0d9]">
+        <div className="pointer-events-none fixed inset-x-0 top-0 z-20 flex justify-center bg-gradient-to-b from-black/80 via-black/50 to-transparent pb-4 pt-3 sm:pb-6 sm:pt-4 backdrop-blur-md">
+          <div className="pointer-events-auto flex w-full max-w-5xl items-center justify-between px-3 sm:px-4 md:px-6">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#f7c0d9]">
               <span className="h-1 w-1 rounded-full bg-[#ff80b5] shadow-[0_0_10px_rgba(255,128,181,0.9)]" />
-              <span>Our private little universe</span>
+              <span className="hidden xs:inline">Our private little universe</span>
+              <span className="xs:hidden">Our universe</span>
             </div>
           </div>
         </div>
 
         {/* HERO */}
-        <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+        <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,#ff80b522,transparent_60%),radial-gradient(circle_at_85%_20%,#f5cba729,transparent_65%)]" />
 
-          <div className="relative flex flex-col gap-10 lg:flex-row lg:items-center">
-            <div className="max-w-xl space-y-5">
+          <div className="relative flex flex-col gap-6 sm:gap-8 lg:gap-10 lg:flex-row lg:items-center">
+            <div className="max-w-xl space-y-4 sm:space-y-5">
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -186,7 +187,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05, duration: 0.85, ease: "easeOut" }}
-                className="font-serif text-4xl font-semibold leading-tight text-[#fff0f7] sm:text-5xl lg:text-6xl"
+                className="font-serif text-3xl font-semibold leading-tight text-[#fff0f7] sm:text-4xl md:text-5xl lg:text-6xl"
               >
                 <span
                   id="sony-name"
@@ -203,7 +204,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.12, duration: 0.85, ease: "easeOut" }}
-                className="max-w-lg text-sm leading-relaxed text-[#f1d5e0] sm:text-[0.97rem]"
+                className="max-w-lg text-xs leading-relaxed text-[#f1d5e0] sm:text-sm md:text-[0.97rem]"
               >
                 Crafted by{" "}
                 <span className="font-semibold text-[#f5cba7]">
@@ -233,15 +234,15 @@ export default function Home() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.32, duration: 0.8, ease: "easeOut" }}
-                className="mt-4 flex flex-wrap items-center gap-4 text-[11px] text-[#e5c8d4]"
+                className="mt-3 sm:mt-4 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4 text-[10px] sm:text-[11px] text-[#e5c8d4]"
               >
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-8 rounded-full bg-[#ff80b5]" />
-                  <span>Started talking · 10 June 2025</span>
+                  <span className="h-1.5 w-6 sm:w-8 rounded-full bg-[#ff80b5]" />
+                  <span className="whitespace-nowrap">Started talking · 10 June 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-8 rounded-full bg-[#f5cba7]" />
-                  <span>Got together · 21 October</span>
+                  <span className="h-1.5 w-6 sm:w-8 rounded-full bg-[#f5cba7]" />
+                  <span className="whitespace-nowrap">Got together · 21 October</span>
                 </div>
               </motion.div>
             </div>
@@ -251,11 +252,11 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9, x: 30 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
-              className="relative mt-4 h-64 flex-1 sm:h-80 lg:h-96"
+              className="relative mt-6 sm:mt-4 h-48 w-full flex-1 sm:h-64 md:h-80 lg:h-96"
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
-                  className="relative flex h-[300px] w-[300px] items-center justify-center sm:h-[300px] sm:w-[300px] lg:h-[300px] lg:w-[300px]"
+                  className="relative flex h-[200px] w-[200px] items-center justify-center sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] lg:h-[300px] lg:w-[300px]"
                   style={{
                     clipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
                     WebkitClipPath: 'path("M150,268.74l-18.12-16.5C67.5,192,24.99,153.51,24.99,106.26 C24.99,67.74,55.26,37.5,93.75,37.5c21.75,0,42.63,10.14,56.25,26.13C163.62,47.64,184.5,37.5,206.25,37.5 C244.74,37.5,275.01,67.74,275.01,106.26c0,47.25-42.51,85.74-106.89,144.24L150,268.74z")',
@@ -305,21 +306,21 @@ export default function Home() {
         {/* I love you thiiiiiiis much section */}
         <section
           ref={loveScrollRef}
-          className="relative mx-auto mt-10 mb-8 flex min-h-[35vh] max-w-5xl flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8"
+          className="relative mx-auto mt-8 mb-6 sm:mt-10 sm:mb-8 flex min-h-[25vh] sm:min-h-[30vh] md:min-h-[35vh] max-w-5xl flex-col items-center justify-center overflow-hidden px-3 sm:px-4 md:px-6 lg:px-8"
         >
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-4 text-xs uppercase tracking-[0.3em] text-[#f7c0d9]"
+            className="mb-3 sm:mb-4 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#f7c0d9]"
           >
             How much I love you
           </motion.p>
 
-          <div className="relative flex h-[30vh] w-full items-center overflow-hidden rounded-[999px] border border-[#ff80b544] bg-black/40 px-6 shadow-[0_0_60px_rgba(255,128,181,0.55)] backdrop-blur">
+          <div className="relative flex h-[20vh] sm:h-[25vh] md:h-[30vh] w-full items-center overflow-hidden rounded-[999px] border border-[#ff80b544] bg-black/40 px-3 sm:px-4 md:px-6 shadow-[0_0_60px_rgba(255,128,181,0.55)] backdrop-blur">
             <div
-              className={`whitespace-nowrap text-center font-semibold text-[#ffe4f3] text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${
+              className={`whitespace-nowrap text-center font-semibold text-[#ffe4f3] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl ${
                 loveScrollActive ? "love-scroll" : ""
               }`}
             >

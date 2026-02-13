@@ -63,14 +63,14 @@ const TimelineEvent = memo(function TimelineEvent({ event, index }: { event: typ
       </motion.div>
 
       {/* Card */}
-      <div className="glass-panel relative flex-1 rounded-2xl px-5 py-4 sm:px-6 sm:py-5">
-        <p className="text-[11px] uppercase tracking-[0.2em] text-[#f7c0d9]/80">
+      <div className="glass-panel relative flex-1 rounded-2xl px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5">
+        <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#f7c0d9]/80">
           {event.date}
         </p>
-        <h3 className="mt-1 font-serif text-xl font-semibold text-[#ffe9f3] sm:text-2xl">
+        <h3 className="mt-1 font-serif text-lg sm:text-xl md:text-2xl font-semibold text-[#ffe9f3]">
           {event.title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-[#e5c8d4]">
+        <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed text-[#e5c8d4]">
           {event.description}
         </p>
       </div>
@@ -93,15 +93,15 @@ export function Timeline() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="mb-10 text-center"
+        className="mb-8 sm:mb-10 text-center px-2"
       >
-        <p className="text-xs uppercase tracking-[0.2em] text-[#f7c0d9]">
+        <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#f7c0d9]">
           Our timeline
         </p>
-        <h2 className="mt-2 font-serif text-3xl font-semibold text-[#ffe9f3] sm:text-4xl">
+        <h2 className="mt-2 font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#ffe9f3]">
           The beats of our story
         </h2>
-        <p className="mt-3 text-sm text-[#d4b6c1] sm:text-base">
+        <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base text-[#d4b6c1] px-2">
           Every chapter with you, Sony, feels like a scene from the most
           beautiful film I never want to end.
         </p>

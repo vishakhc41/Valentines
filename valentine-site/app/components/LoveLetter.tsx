@@ -66,7 +66,7 @@ export function LoveLetter() {
   const rendered = displayText.split("\n").map((line, index) => (
     <p
       key={index}
-      className="whitespace-pre-wrap text-sm leading-relaxed text-[#f5dbe6] sm:text-[0.97rem]"
+      className="whitespace-pre-wrap text-xs sm:text-sm md:text-[0.97rem] leading-relaxed text-[#f5dbe6]"
     >
       {line}
     </p>
@@ -75,7 +75,7 @@ export function LoveLetter() {
   return (
     <section
       id="love-letter"
-      className="valentine-section relative mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-0"
+      className="valentine-section relative mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-0"
     >
       <div className="absolute inset-x-0 top-10 -z-10 h-64 bg-[radial-gradient(circle_at_top,#3d0a1c_0,transparent_65%)] opacity-80" />
 
@@ -84,18 +84,18 @@ export function LoveLetter() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-6 text-center"
+        className="mb-4 sm:mb-6 text-center"
       >
-        <p className="text-[11px] uppercase tracking-[0.25em] text-[#f7c0d9]">
+        <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#f7c0d9]">
           A letter to you
         </p>
-        <h2 className="mt-2 font-serif text-3xl font-semibold text-[#ffe9f3] sm:text-[2.15rem]">
+        <h2 className="mt-2 font-serif text-2xl sm:text-3xl md:text-[2.15rem] font-semibold text-[#ffe9f3]">
           Words my heart wrote for you
         </h2>
       </motion.header>
 
       <motion.div
-        className="glass-panel relative overflow-hidden rounded-3xl px-5 py-6 sm:px-7 sm:py-8"
+        className="glass-panel relative overflow-hidden rounded-3xl px-4 py-5 sm:px-5 sm:py-6 md:px-7 md:py-8"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-120px" }}
@@ -104,7 +104,7 @@ export function LoveLetter() {
         <div className="pointer-events-none absolute -right-10 top-6 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_20%_0%,#ff80b537,transparent_65%)]" />
         <div className="pointer-events-none absolute -left-14 bottom-0 h-44 w-44 rounded-full bg-[radial-gradient(circle_at_10%_0%,#f5cba736,transparent_65%)]" />
 
-        <div className="relative space-y-3">
+        <div className="relative space-y-2 sm:space-y-3">
           {rendered}
           <span className="typed-cursor align-middle" />
         </div>
